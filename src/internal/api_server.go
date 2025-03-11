@@ -1,10 +1,10 @@
-package api
+package internal
 
 import (
 	"encoding/json"
 	"fmt"
 	"github.com/google/uuid"
-	"github.com/keshavrathinvael/Big-O-Solution/storage"
+	"github.com/keshavrathinvael/Big-O-Solution/internal/storage"
 	"net/http"
 	"regexp"
 	"strings"
