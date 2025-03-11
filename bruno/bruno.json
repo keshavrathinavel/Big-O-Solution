@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "BigO",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,21 @@
+meta {
+  name: PUT Key
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:5555/pand-123
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "seismic_activity": 2.1,
+    "temperature_c": -34.2,
+    "radiation_level": 401.9,
+    "id": "3049e4b1-cc5b-441e-b127-f345259b0b9b"
+  }
+  
+}
