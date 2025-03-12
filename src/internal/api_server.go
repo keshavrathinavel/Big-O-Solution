@@ -98,11 +98,18 @@ func (s *Server) handlePut(w http.ResponseWriter, r *http.Request, locationID st
 	var reqData RequestData
 
 	d := json.NewDecoder(r.Body)
-	d.Decode(&reqData)
+	err := d.Decode(&reqData)
+
+	if err != nil {
+		fmt.Printf("Error while decoding json: %v\n", err)
+		http.Error(w, "Invalid UUID format", http.StatusBadRequest)
+		return
+	}
 
 	id, err := uuid.Parse(reqData.ID)
 	if err != nil {
 		http.Error(w, "Invalid UUID format", http.StatusBadRequest)
+		return
 	}
 
 	var data storage.DataEntry
